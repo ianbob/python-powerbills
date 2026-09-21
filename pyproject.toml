@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "kplc-powerbill-renamer"
+version = "0.1.0"
+description = "Extract KPLC account numbers from scanned PDFs and rename the files"
+requires-python = ">=3.10"
+dependencies = [
+    "PyMuPDF>=1.24",
+    "Pillow>=10.0",
+    "openpyxl>=3.0",
+    "pytesseract>=0.3.10",
+]
+
+[project.scripts]
+kplc-rename = "powerbills.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[parse.info]
